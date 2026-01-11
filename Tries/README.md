@@ -1,0 +1,1 @@
+這是記錄我得到大廠和 Google 的 Leetcode 紀錄旅程
