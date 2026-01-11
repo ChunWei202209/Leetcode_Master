@@ -8,7 +8,7 @@ func twoSum(nums []int, target int) []int {
             return []int{j, i}
         }
 
-        prevMap[n] = i
+        prevMap[n] = i // 將 n 存到 map 的 key 中
     }
     return []int{}
 }
@@ -20,7 +20,7 @@ func twoSum(nums []int, target int) []int {
     // key：數字（nums 裡出現過的值）
     // value：那個數字的 index
 // 2. 使用索引 i 迭代整個陣列，並計算目前元素所需的補數（complement），也就是 target - nums[i]。
-// 3. 檢查這個補數是否存在於雜湊表中。
+// 3. 檢查這個補數是否存在於雜湊表的 key 中。
 // 4. 如果存在，回傳目前元素的索引以及該補數對應的索引 (j：之前出現過的那個數字的 index)。
 // 5. 如果遍歷完整個陣列後仍然找不到符合條件的數字組合，則回傳一個空的陣列。
 
