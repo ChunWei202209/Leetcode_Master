@@ -3,10 +3,11 @@ func twoSum(nums []int, target int) []int {
 
     for i, n := range nums {
         diff := target - n
-        j, found := prevMap[diff]
-        if found {
+
+        if j, found := prevMap[diff]; found {
             return []int{j, i}
         }
+
         prevMap[n] = i
     }
     return []int{}
