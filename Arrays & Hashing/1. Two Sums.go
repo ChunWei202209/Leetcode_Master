@@ -3,7 +3,8 @@ func twoSum(nums []int, target int) []int {
 
     for i, n := range nums {
         diff := target - n
-        if j, found := prevMap[diff]; found {
+        j, found := prevMap[diff]
+        if found {
             return []int{j, i}
         }
         prevMap[n] = i
@@ -14,7 +15,7 @@ func twoSum(nums []int, target int) []int {
 // 1. 建立一個雜湊表（hash map），用來儲存陣列中每個元素的值以及它對應的索引。
 // 2. 使用索引 i 迭代整個陣列，並計算目前元素所需的補數（complement），也就是 target - nums[i]。
 // 3. 檢查這個補數是否存在於雜湊表中。
-// 4. 如果存在，回傳目前元素的索引以及該補數對應的索引。
+// 4. 如果存在，回傳目前元素的索引以及該補數對應的索引 (j：之前出現過的那個數字的 index)。
 // 5. 如果遍歷完整個陣列後仍然找不到符合條件的數字組合，則回傳一個空的陣列。
 
 // 複雜度:
