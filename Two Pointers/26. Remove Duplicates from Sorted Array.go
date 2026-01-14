@@ -21,8 +21,10 @@ func removeDuplicates(nums []int) int {
     return slow + 1
 }
 
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+
 // 核心技巧：
-// 左右指標往中間掃，求和等於目標
+// 左指標追蹤位置，右指標遍歷
 
 // 關鍵點解析： 
 // 1. 為什麼要原地修改？
