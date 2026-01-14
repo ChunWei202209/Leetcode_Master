@@ -24,6 +24,9 @@ func twoSum(numbers []int, target int) []int {
 
 // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 
+// 核心技巧：
+// 左右指標往中間掃，求和等於目標
+
 // 解題步驟： 
 // 1. 初始化：我們將 left 指標指向陣列的第一個元素（索引 0），right 指標指向最後一個元素。
 // 2. 移動規則：如果 numbers[left] + numbers[right] 剛好等於 target，
