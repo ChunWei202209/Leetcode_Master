@@ -22,10 +22,12 @@ func twoSum(numbers []int, target int) []int {
     return []int{}
 }
 
-// 程式邏輯說明： 
+// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+
+// 解題步驟： 
 // 1. 初始化：我們將 left 指標指向陣列的第一個元素（索引 0），right 指標指向最後一個元素。
 // 2. 移動規則：如果 numbers[left] + numbers[right] 剛好等於 target，
-//     恭喜找到答案，回傳 [left + 1, right + 1]。
+//     恭喜找到答案，回傳 [left + 1, right + 1] (題目要求將 index+1)。
 // 3. 如果 總和小於 target：
 //     因為陣列是排序過的，為了讓總和變大，我們必須把 left 往右移（指向更大的數）。
 //     如果 總和大於 target：為了讓總和變小，我們必須把 right 往左移（指向更小的數）。
