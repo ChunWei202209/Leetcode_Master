@@ -47,6 +47,9 @@ func threeSum(nums []int) [][]int {
 
 // https://leetcode.com/problems/3sum/description/
 
+// 核心技巧：
+// 一指標固定，左右指標往中間掃，求和等於目標
+
 // 題目要求：
 // 找出陣列中所有「不重複」的三元組 [nums[i], nums[j], nums[k]]，使得它們的和為 0。
 // 注意： 結果集中不能包含重複的三元組。
