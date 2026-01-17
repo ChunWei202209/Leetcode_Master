@@ -19,6 +19,7 @@ func lengthOfLongestSubstring(s string) int {
         seen[s[right]] = true
 
         // 更新最大長度
+        // 我們要 每次都檢查是否是目前最長，而不是在 loop 之後檢查，會漏掉中間最長的子串
         if right-left+1 > maxLen {
             maxLen = right - left + 1
         }
