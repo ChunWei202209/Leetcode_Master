@@ -28,6 +28,7 @@ func lengthOfLongestSubstring(s string) int {
     return maxLen
 }
 
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 // https://neetcode.io/problems/longest-substring-without-duplicates/solution
 
 // 題目要求：
