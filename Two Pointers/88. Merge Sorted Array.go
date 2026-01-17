@@ -37,6 +37,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 
 // 解題步驟：
 // 1. 初始化三個指標 (Pointers)
+// 任何 slice / array：index 範圍永遠是 0 ~ len-1
 //     a. i：指向 nums1 中最後一個「有效元素」的位置 (m - 1)。
 //     b. j：指向 nums2 中最後一個元素的位置 (n - 1)。
 //     c. p：指向 nums1 總體空間的「最末端」位置 (m + n - 1)，這是下一個最大值要存放的地方。
