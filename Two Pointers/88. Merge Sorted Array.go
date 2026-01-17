@@ -24,6 +24,9 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
     }
 }
 
+// 核心技巧：
+// 左右指標倒序 / 正序填充
+
 // 題目要點：
 // 給你兩個有序整數陣列 nums1 和 nums2。
 // nums1 有足夠的空間（大小為 m + n）來容納 nums2 的元素。
