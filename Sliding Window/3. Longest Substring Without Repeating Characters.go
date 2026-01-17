@@ -51,3 +51,13 @@ func lengthOfLongestSubstring(s string) int {
       delete(map, key) 是 delete(誰, 刪誰) 的意思，跟 map 裡面的順序無關。
 // 4. 每一步都更新「目前最長長度」。
       視窗長度是右邊界 (index) - 左邊界 (index)  + 1。
+
+// 注意：
+// seen = {
+//   'a': true,
+//   'b': true,
+//   'c': true
+// }
+
+// s[left] → 你要查哪個人 "a"
+// seen[s[left]] → 問 "a" 這個人是不是在房間裡？ → true / false
