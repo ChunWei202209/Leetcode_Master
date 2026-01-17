@@ -8,8 +8,8 @@ func lengthOfLongestSubstring(s string) int {
   
     // 視窗右邊界一路往右走
     for right := 0; right < len(s); right++ { 
-        // 如果右邊的字已經出現過
-        for seen[s[right]] { // 查 map 裡面有沒有值
+        // 如果右邊的字在 map 是否已經出現過，值是 true
+        for seen[s[right]] {
             // 把左邊的字移出視窗，就是字元是 s[left]」這一筆 key
             delete(seen, s[left])
             left++
@@ -27,6 +27,7 @@ func lengthOfLongestSubstring(s string) int {
     return maxLen
 }
 
+// https://neetcode.io/problems/longest-substring-without-duplicates/solution
 
 // 題目要求：
 // 給你一個字串，找出「不包含重複字元的最長連續子字串」的長度。
@@ -40,11 +41,11 @@ func lengthOfLongestSubstring(s string) int {
 // 用 map 記字元位置 / 窗口左右界移動
 
 // 解題步驟：
-// 1. 用 map 記錄「目前視窗內有哪些字」，「我用 byte（0~255 的數字）來當 key，記錄哪些字出現過」
-      key：字元（像 'a', 'b'）
-      value：true 表示「在房間裡」
-// 2. 用 right 向右走，一個字一個字看
-// 3. 如果發現重複字，就移動 left 把重複字移掉
-      delete(map, key) 是 delete(誰, 刪誰) 的意思
-// 4. 每一步都更新「目前最長長度」
-      視窗長度是右邊界 (index) - 左邊界 (index)  + 1
+// 1. 用 map 記錄「目前視窗內有哪些字」，「我用 byte（0~255 的數字）來當 key，記錄哪些字出現過」。
+      key：字元（像 'a', 'b'）。
+      value：true 表示「在房間裡」。
+// 2. 用 right 向右走，一個字一個字看。
+// 3. 如果發現重複字，就移動 left 把重複字移掉。
+      delete(map, key) 是 delete(誰, 刪誰) 的意思，跟 map 裡面的順序無關。
+// 4. 每一步都更新「目前最長長度」。
+      視窗長度是右邊界 (index) - 左邊界 (index)  + 1。
