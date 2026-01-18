@@ -13,6 +13,8 @@ func twoSum(nums []int, target int) []int {
     return []int{}
 }
 
+// https://leetcode.com/problems/two-sum/submissions/1889007203/
+
 // 目標: 回傳j：之前在 map 裡找到的那個數字的 index；i：目前這個數字的 index
 
 // 解法順序:
