@@ -18,8 +18,11 @@ func twoSum(nums []int, target int) []int {
 // https://leetcode.com/problems/two-sum/description/
 
 // 目標: 還傳兩個不同數字的 index。
-// j：之前在 map 裡找到的那個數字的 index
 // i：目前這個數字的 index
+// j：就是「之前某一次迴圈的 i，被你存進 prevMap 的那個值」
+
+// 解題關鍵:
+// 使用 先找，再存 的方法是避免使用同個元素兩次。
 
 // 解法順序：
 // 1. 建立一個雜湊表（hash map），用來儲存陣列中每個元素的值以及它對應的索引。
@@ -36,6 +39,3 @@ func twoSum(nums []int, target int) []int {
 
 // 複雜度:
 // 時間 O(n)，空間 O(n)
-
-// 注意:
-// 使用先找，再存的方法是避免使用同個元素兩次
