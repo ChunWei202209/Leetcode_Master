@@ -1,4 +1,5 @@
-2️⃣ Sliding Window 模板（Longest Substring 型）
+✅ Sliding Window 模板（Longest Substring 型）💯
+
 m := make(map[byte]bool)
 left := 0
 for right := 0; right < len(s); right++ {
