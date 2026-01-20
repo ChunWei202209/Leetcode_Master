@@ -4,7 +4,8 @@ func threeSum(nums []int) [][]int {
 	sort.Ints(nums) // 1. 先排序
 	res := [][]int{}
 	n := len(nums)
-
+	
+	// 外層去重：固定的第一個數不能重複
 	for i := 0; i < n-2; i++ {
 		// 如果目前的數已經大於 0，後面的數也一定大於 0，不可能相加等於 0
 		if nums[i] > 0 {
@@ -23,16 +24,16 @@ func threeSum(nums []int) [][]int {
 			if sum == 0 {
 				res = append(res, []int{nums[i], nums[left], nums[right]})
 				
-				// 去重：跳過重複的左指針數值
+				// 去重：跳過相同數值，避免產生重複的三元組
 				for left < right && nums[left] == nums[left+1] {
 					left++
 				}
-				// 去重：跳過重複的右指針數值
+				// 去重：跳過相同數值，避免產生重複的三元組
 				for left < right && nums[right] == nums[right-1] {
 					right--
 				}
 				
-				// 縮小範圍繼續找
+				// 移動指針（換位置）
 				left++
 				right--
 			} else if sum < 0 {
@@ -64,15 +65,19 @@ func threeSum(nums []int) [][]int {
 // 3. 雙指標找剩下兩個數：
 //     a. 設 left = i + 1, right = len - 1。
 //     b. 當 sum == 0：存入結果，並將 left 和 right 往中間移動，移動過程中要跳過重複的數字。
-//     c. 當 sum < 0：將 left 右移（增加總和）。
-//     d. 當 sum > 0：將 right 左移（減少總和）。
+	   c. 必須去重（值層級） 
+//     d. 當 sum < 0：將 left 右移（增加總和）。
+//     e. 當 sum > 0：將 right 左移（減少總和）。
 
 // 關鍵細節：
 // 為什麼要去重？ 
 // 題目要求「不重複的三元組」。
 // 例如 nums = [-1, -1, 0, 1]： 當 i=0 時，我們找到了 [-1, 0, 1]。
 // 當 i=1 時，如果我們不執行 if nums[i] == nums[i-1] 的判斷，會再次找到 [-1, 0, 1]。
-// 同理，內層的 left 和 right 也需要去重，否則會收錄重複的組合。 
+// 同理，內層的 left 和 right 也需要去重，否則會收錄重複的組合，去的是「值」，不是「index」。 
+// 為何 sum < 0 或 sum > 0 不去重？ 
+// 若 sum < 0 或 sum > 0，代表這一組不符合要求，所以直接移動 left 或 right；
+// 即便數字跟之前相同，因為不符合要求，就不用去重。
 
 // 複雜度分析 ：
 // 時間複雜度：
