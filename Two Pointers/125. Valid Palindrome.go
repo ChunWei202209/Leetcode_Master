@@ -8,13 +8,13 @@ func isPalindrome(s string) bool {
     left, right := 0, len(runes)-1
 
     for left < right {
-        // 跳過左邊非字母或數字
+        // 跳過左邊非字母或數字，繼續檢查後面
         if !unicode.IsLetter(runes[left]) && !unicode.IsDigit(runes[left]) {
             left++
             continue
         }
 
-        // 跳過右邊非字母或數字
+        // 跳過右邊非字母或數字，繼續檢查後面
         if !unicode.IsLetter(runes[right]) && !unicode.IsDigit(runes[right]) {
             right--
             continue
