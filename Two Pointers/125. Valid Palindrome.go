@@ -37,7 +37,7 @@ func isPalindrome(s string) bool {
 // after removing all non-alphanumeric characters and ignoring case, 
 // it reads the same forwards and backwards.
 
+// 用 []rune(s) 可以安全處理中文或 emoji，不會出現亂碼
 // unicode.IsLetter 判斷是不是字母
 // unicode.IsDigit 判斷是不是數字
 // unicode.ToLower 直接大小寫轉換，支援 Unicode
-// 用 []rune(s) 可以安全處理中文或 emoji，不會出現亂碼
