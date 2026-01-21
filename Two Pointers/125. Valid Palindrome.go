@@ -49,7 +49,6 @@ func isPalindrome(s string) bool {
     return true
 }
 
-
 // A string is a palindrome if, 
 // after removing all non-alphanumeric characters and ignoring case, 
 // it reads the same forwards and backwards.
