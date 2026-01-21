@@ -4,32 +4,28 @@ import (
 )
 
 func isPalindrome(s string) bool {
-    left, right := 0, len(s)-1
-    runes := []rune(s) // 轉成 rune 才能安全處理非 ASCII
+    runes := []rune(s)
+    left, right := 0, len(runes)-1
 
     for left < right {
-        // 找左邊的有效字元
-        for left < right {
-            if unicode.IsLetter(runes[left]) || unicode.IsDigit(runes[left]) {
-                break // 找到字母或數字就停
-            }
-            left++ // 不是的話就往右移
+        // 跳過左邊非字母或數字
+        if !unicode.IsLetter(runes[left]) && !unicode.IsDigit(runes[left]) {
+            left++
+            continue
         }
 
-        // 找右邊的有效字元
-        for left < right {
-            if unicode.IsLetter(runes[right]) || unicode.IsDigit(runes[right]) {
-                break // 找到字母或數字就停
-            }
-            right-- // 不是的話就往左移
+        // 跳過右邊非字母或數字
+        if !unicode.IsLetter(runes[right]) && !unicode.IsDigit(runes[right]) {
+            right--
+            continue
         }
-      
+
         // 比較兩個字元（忽略大小寫）
         if unicode.ToLower(runes[left]) != unicode.ToLower(runes[right]) {
-            return false // 不一樣就不是回文
+            return false
         }
-      
-        // 移動指標，繼續下一輪比較
+
+        // 指標移動
         left++
         right--
     }
